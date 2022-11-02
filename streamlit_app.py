@@ -21,7 +21,7 @@ cost = st.sidebar.number_input('What is the Total Cost of Your Excursion?')
 uploaded_file = st.sidebar.file_uploader('Upload Copy of Receipt')
 
 #Set domain for API calls
-domain = https://api.openweathermap.org/data/3.0/onecall&lat=21.31&lon=-157.86&exclude=current,minutely,hourly,alerts&units=imperial&appid=
+domain = 'https://api.openweathermap.org/data/3.0/onecall&lat=21.31&lon=-157.86&exclude=current,minutely,hourly,alerts&units=imperial&appid='
 
 # Load credentials for the API calls into the auth variable
 credential_upload = st.file_uploader('Upload Open Weather MAP API credentials')
