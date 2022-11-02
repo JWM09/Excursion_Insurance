@@ -34,7 +34,8 @@ if credential_upload:
 st.caption('Upload the API key within a .txt file', unsafe_allow_html = True)
 
 # Create a button to generate the forecast
-if st.button('Generate Forecast')
+if st.button('Generate Forecast'):
+    st.write('generating forecast')
 
 st.image('./Images/logo.png')
 
