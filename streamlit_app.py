@@ -29,7 +29,7 @@ if credential_upload:
     creds = []
     for line in credential_upload:
         creds.append(line.decode().strip())
-    auth = (creds[0], creds[1])
+    auth = (creds[0])
 
 st.caption('Upload the API key within a .txt file', unsafe_allow_html = True)
 
