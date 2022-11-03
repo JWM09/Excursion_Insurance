@@ -6,6 +6,9 @@ import os
 import json
 from datetime import datetime, timedelta
 import pandas as pd
+from typing import Any, List
+import hashlib
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 #Create the sidebar
 st.sidebar.title('User Inputs')
@@ -14,7 +17,7 @@ st.sidebar.markdown('Provide some general information & we will quote you an ins
 name = st.sidebar.text_input('What is Your Name?')
 email = st.sidebar.text_input('What is Your Email Address?')
 size = st.sidebar.number_input('How Many In Your Party?', 1,8)
-date = st.sidebar.date_input('What is the Date of Your Excursion')
+date = st.sidebar.date_input('What is the date of your excursion')
 type = st.sidebar.selectbox('What is your excursion type', ['Sail', 'Golf', 'Scuba', 'ZipLine', 'Moped', 'Other'])
 cost = st.sidebar.number_input('What is the Total Cost of Your Excursion?')
 
