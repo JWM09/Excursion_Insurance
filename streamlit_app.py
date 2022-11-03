@@ -31,13 +31,15 @@ if credential_upload:
         creds.append(line.decode().strip())
     auth = (creds[0])
 
+st.image('./Images/logo.png')
+
 st.caption('Upload the API key within a .txt file', unsafe_allow_html = True)
 
 # Create a button to generate the forecast
 if st.button('Generate Forecast'):
     st.write('generating forecast')
+st.write()
 
-st.image('./Images/logo.png')
 
 st.header('Here are the average weather conditions on the day of your excursion:')
 
