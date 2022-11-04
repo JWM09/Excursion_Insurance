@@ -75,7 +75,7 @@ Brought to you by Sam Eberts, Jon Kang, Tracy Kellison Emory, Jon Mitchell, Souk
 
 ---
 
-## License - Needs Updates
+## License 
 
 Copyright 2022 
 
