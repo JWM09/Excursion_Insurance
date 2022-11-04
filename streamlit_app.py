@@ -29,24 +29,24 @@ uploaded_file = st.sidebar.file_uploader('Upload Copy of Receipt')
 domain = 'https://api.openweathermap.org/data/3.0/onecall&lat=21.31&lon=-157.86&exclude=current,minutely,hourly,alerts&units=imperial&appid='
 
 # Load credentials for the API calls into the auth variable
-credential_upload = st.file_uploader('Upload Open Weather MAP API credentials')
-if credential_upload:
-    creds = []
-    for line in credential_upload:
-        creds.append(line.decode().strip())
-    auth = (creds[0])
+#credential_upload = st.file_uploader('Upload Open Weather MAP API credentials')
+#if credential_upload:
+#    creds = []
+#    for line in credential_upload:
+#        creds.append(line.decode().strip())
+#    auth = (creds[0])
 
 st.image('./Images/logo.png')
 
-st.caption('Upload the API key within a .txt file', unsafe_allow_html = True)
+#st.caption('Upload the API key within a .txt file', unsafe_allow_html = True)
 
 # Create a button to generate the forecast
-if st.button('Generate Forecast'):
-    st.write('generating forecast')
-st.write()
+#if st.button('Generate Forecast'):
+#    st.write('generating forecast')
+#st.write()
 
 
-st.header('Here are the average weather conditions on the day of your excursion:')
+st.header('Find the 30 year historical weather conditions for the day of excursion here:')
 
 
 #Tutorial available at: https://towardsdatascience.com/make-dataframes-interactive-in-streamlit-c3d0c4f84ccb
@@ -82,20 +82,22 @@ def fetch(session, url):
     except Exception:
         return{}
 
-st.caption('Temperature: ')
-st.caption('Cloud Cover:')
-st.caption('Percipitation:')
-st.caption('Wind Speed:')
+#st.caption('Temperature: ')
+#st.caption('Cloud Cover:')
+#st.caption('Percipitation:')
+#st.caption('Wind Speed:')
 
 st.image('./Images/sail.png')
 
-st.header('Here is the 5 day weather forecast for your excursion location')
+#st.header('Here is the 5 day weather forecast for your excursion location')
 
-st.image('./Images/scuba.png')
+#st.image('./Images/scuba.png')
 
 st.write('Based on the info provided & historical weather data you qualify for ExcurAssure!')
-st.caption('Cost to insure your excursion:')
+st.caption('Cost to insure your excursion: $87.50') #17.5% of $500 excursion.  Hard coded at this time
 st.radio('Do you wish to proceed', ['Yes', 'No'])
+
+st.button('Create Contract')
 
 
 
