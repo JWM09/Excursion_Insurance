@@ -45,11 +45,15 @@ Ask them to provide travel details:
 
 We then anlayze the historical weather averages for that day using st_aggrid:
   
+  ![Weather](Images/weather_averages.png)
+  
   
 If customer decides to purhcase insurance we create a smart contract:
   
-
-
+  ![Deploy Contract](Images/deployed_purchase_contract.png)
+  
+  ![Confirm Contract](Images/pay_seller.png)
+  
 
 ---
 
