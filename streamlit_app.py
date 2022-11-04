@@ -10,6 +10,8 @@ from typing import Any, List
 import hashlib
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
+historical_weather = pd.read_csv('full_weather.csv', index_col=0)
+
 #Create the sidebar
 st.sidebar.title('User Inputs')
 st.sidebar.markdown('Provide some general information & we will quote you an insurance policy for your excursion')
@@ -45,6 +47,33 @@ st.write()
 
 
 st.header('Here are the average weather conditions on the day of your excursion:')
+
+
+#Tutorial available at: https://towardsdatascience.com/make-dataframes-interactive-in-streamlit-c3d0c4f84ccb
+#AgGrid(historical_weather)
+gb = GridOptionsBuilder.from_dataframe(historical_weather)
+gb.configure_pagination(paginationAutoPageSize=False) #Add pagination
+gb.configure_side_bar() #Add a sidebar
+gb.configure_selection('multiple', use_checkbox=True, groupSelectsChildren='Group checkbox select children') # Enable multirow selection
+gridOptions = gb.build()
+
+grid_response = AgGrid(
+    historical_weather,
+    gridOptions=gridOptions,
+    data_return_mode='AS_INPUT',
+    update_mode='MODEL_CHANGED',
+    fit_columns_on_grid_load=False,
+    theme='blue', #add the color to the table
+    enable_enterprise_modules=True,
+    height=350,
+    width='100%',
+    reload_data=True 
+)
+
+#historical_weather = grid_response['historical_weather']
+#selected = grid_response['selected_rows']
+#df = pd.DataFrame(selected) #pass the selected rows to a new dataframe df
+
 
 def fetch(session, url):
     try:
